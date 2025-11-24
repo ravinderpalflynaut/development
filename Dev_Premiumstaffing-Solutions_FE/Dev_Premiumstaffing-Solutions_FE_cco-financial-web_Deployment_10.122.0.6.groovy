@@ -4,7 +4,7 @@ pipeline {
     }
  environment {
         GIT_CREDENTIALS_ID = 'New-Github-Jenkins-Cred-2025'
-        GIT_REPO = 'https://github.com/ravinderpalflynaut/development.git'
+        GIT_REPO = 'https://github.com/FlyNaut-Dev/cco-financial-web.git'
         GIT_BRANCH = 'Development'
     }
     stages {
