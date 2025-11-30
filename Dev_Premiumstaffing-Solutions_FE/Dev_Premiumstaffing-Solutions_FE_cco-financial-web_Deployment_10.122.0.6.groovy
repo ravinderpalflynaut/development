@@ -8,7 +8,7 @@ pipeline {
   GIT_BRANCH = 'Development'
   DOCKER_HUB_REPO = 'hub.flynautstaging.com/cco-dev/test'
   DOCKER_IMAGE_TAG = 'latest'
-  DOCKER_REGISTRY_URL = 'https://hub.finvasia.com'
+  DOCKER_REGISTRY_URL = 'https://hub.flynautstaging.com'
   DOCKER_CREDENTIALS_ID = 'DockerHub'
     }
     stages {
