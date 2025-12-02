@@ -1,0 +1,37 @@
+architecture: standalone
+ 
+auth:
+  enabled: true
+  password: aTB34M3hankoMvrw7A
+ 
+master:
+  service:
+    type: NodePort
+    ports:
+      redis: 1346
+    nodePorts:
+      redis: "32531"  
+  containerPorts:
+    redis: 6379
+  persistence:
+    enabled: true
+    existingClaim: redis-pvc
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 200m
+      memory: 512Mi
+
+image:
+  registry: docker.io
+  repository: redis/redis-stack
+  tag: latest
+
+
+global:
+  security:
+    ## @param global.security.allowInsecureImages Allows skipping image verification
+    allowInsecureImages: true      
+   

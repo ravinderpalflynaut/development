@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redis-hankotrade-crm
+  namespace: argocd
+spec:
+  project: default
+  sources:  # Changed from 'source' to 'sources'
+    - repoURL: https://helm.redis.io/
+      chart: redis-stack
+      targetRevision: "latest"
+      helm:
+        releaseName: redis-stack
+        valueFiles:
+          - $values/redis/redis.yaml
+  # Reference values from Git repo
+    - repoURL:  https://github.com/ravinderpalflynaut/development.git  # Your private Git repo
+      targetRevision: main  # or your desired branch
+      ref: values  # This creates the $values variable
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: redis
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
+ 
