@@ -14,8 +14,8 @@ pipeline {
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
-        DEPLOY_SERVER         = '10.122.0.6'
-        DEPLOY_USER           = 'ravinderpalsingh'
+        DEPLOY_SERVER         =  '10.122.0.9'
+        DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
         COMPOSE_PATH          = '/var/www/dev-project'
         CONTAINER_NAME        = "${REPONAME}"
@@ -64,7 +64,7 @@ pipeline {
 
         stage('Docker Login + Deploy on Remote') {
             steps {
-                sshagent(['DEV_CREDENTIAL']) {
+                sshagent(['Development-Cred']) {
                     withCredentials([
                         usernamePassword(
                             credentialsId: 'DockerHub',
@@ -72,12 +72,13 @@ pipeline {
                             passwordVariable: 'REG_PASS'
                         )
                     ]) {
-                        sh '''
+                    sh '''
                         ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
-                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME}
-                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d --build ${REPONAME}
+                        echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
+                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
+                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
                         "
-                        '''
+                    '''
                     }
                 }
             }
@@ -85,7 +86,7 @@ pipeline {
 
         stage('Remove Unused & Dangling Images on Remote Server') {
             steps {
-                sshagent(['DEV_CREDENTIAL']) {
+                sshagent(['Development-Cred']) {
                     script {
                          sh '''
                           ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
@@ -97,4 +98,3 @@ pipeline {
         
     }
 }
-
