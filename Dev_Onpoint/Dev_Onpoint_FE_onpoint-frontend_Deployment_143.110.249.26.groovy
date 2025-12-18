@@ -9,7 +9,7 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/onpoint-frontend.git"
         GIT_BRANCH            = 'Development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/onpoint-dev/${REPONAME}'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/onpoint-dev/onpoint-frontend'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
