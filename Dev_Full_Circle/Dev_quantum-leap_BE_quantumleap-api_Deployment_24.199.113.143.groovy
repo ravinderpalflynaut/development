@@ -39,21 +39,21 @@ pipeline {
         }
 
 
-        // stage('Docker Login + Deploy on Remote') {
-        //     steps {
-        //         sshagent(['Development-Cred']) {
-        //             sh '''
-        //                 ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
-        //                cd  ${COMPOSE_PATH} && mkdir ravinderpalsinghdheri-2026
-        //               //  echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
-        //                 // docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
-        //                 // docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
-        //                 "
-        //             '''
+        stage('Docker Login + Deploy on Remote') {
+            steps {
+                sshagent(['Development-Cred']) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
+                       cd  ${COMPOSE_PATH} && mkdir ravinderpalsinghdheri-2026
+                      //  echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
+                        // docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
+                        // docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
+                        "
+                    '''
 
-        //         }
-        //     }
-        // }
+                }
+            }
+        }
          
         
     }
