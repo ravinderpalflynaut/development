@@ -15,7 +15,7 @@ pipeline {
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
-        DEPLOY_SERVER         =  '10.122.0.9'
+        DEPLOY_SERVER         =  '24.199.113.143'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
         COMPOSE_PATH          = '/var/www/dev-project'
