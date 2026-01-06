@@ -1,8 +1,8 @@
 pipeline {
-     agent any
-    // agent {
-    //     label 'dev-rvsingh'
-    // }
+     //agent any
+    agent {
+        label 'dev-rvsingh'
+    }
 
     environment {
         REPONAME              = 'quantumleap-api'
