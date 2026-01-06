@@ -84,17 +84,7 @@ pipeline {
             }
         }
 
-        stage('Remove Unused & Dangling Images on Remote Server') {
-            steps {
-                sshagent(['Development-Cred']) {
-                    script {
-                         sh '''
-                          ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
-                         '''
-                    }
-                }
-            }
-        }           
+         
         
     }
 }
