@@ -64,7 +64,7 @@ pipeline {
 
         stage('Docker Login + Deploy on Remote') {
             steps {
-                sshagent(['Development-Cred']) {
+                sshagent(['Jenkins-Deployment']) {
                     withCredentials([
                         usernamePassword(
                             credentialsId: 'DockerHub',
