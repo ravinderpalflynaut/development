@@ -7,14 +7,14 @@ pipeline {
         REPONAME              = 'quantumleap-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/quantumleap-api.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'master'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/quantumleap-dev/quantumleap-api'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
-        DEPLOY_SERVER         =  '24.199.113.143'
+        DEPLOY_SERVER         =  '10.122.0.9'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
         COMPOSE_PATH          = '/var/www/dev-project'
@@ -56,29 +56,33 @@ pipeline {
             }
         }
 
+        stage('Cleanup Local Docker Images') {
+            steps {
+                sh 'docker image prune -f'
+            }
+        }
 
-
-        // stage('Docker Login + Deploy on Remote') {
-        //     steps {
-        //         sshagent(['Development-Cred']) {
-        //             withCredentials([
-        //                 usernamePassword(
-        //                     credentialsId: 'DockerHub',
-        //                     usernameVariable: 'REG_USER',
-        //                     passwordVariable: 'REG_PASS'
-        //                 )
-        //             ]) {
-        //             sh '''
-        //                 ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
-        //                 echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
-        //                 docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
-        //                 docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
-        //                 "
-        //             '''
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Docker Login + Deploy on Remote') {
+            steps {
+                sshagent(['Development-Cred']) {
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'DockerHub',
+                            usernameVariable: 'REG_USER',
+                            passwordVariable: 'REG_PASS'
+                        )
+                    ]) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
+                        echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
+                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
+                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
+                        "
+                    '''
+                    }
+                }
+            }
+        }
 
         stage('Remove Unused & Dangling Images on Remote Server') {
             steps {
