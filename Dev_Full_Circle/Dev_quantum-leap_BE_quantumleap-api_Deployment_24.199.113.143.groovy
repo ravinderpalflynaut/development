@@ -8,7 +8,7 @@ pipeline {
         REPONAME              = 'quantumleap-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/quantumleap-api.git"
-        GIT_BRANCH            = 'Hotfix'
+        GIT_BRANCH            = 'master'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/quantumleap-dev/quantumleap-api'
         DOCKER_IMAGE_TAG      = 'latest'
