@@ -85,17 +85,17 @@ pipeline {
             }
         }
 
-        // stage('Remove Unused & Dangling Images on Remote Server') {
-        //     steps {
-        //         sshagent(['Jenkins-Deployment']) {
-        //             script {
-        //                  sh '''
-        //                   ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
-        //                  '''
-        //             }
-        //         }
-        //     }
-        // }           
+        stage('Remove Unused & Dangling Images on Remote Server') {
+            steps {
+                sshagent(['Jenkins-Deployment']) {
+                    script {
+                         sh '''
+                          ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
+                         '''
+                    }
+                }
+            }
+        }           
         
     }
 }
