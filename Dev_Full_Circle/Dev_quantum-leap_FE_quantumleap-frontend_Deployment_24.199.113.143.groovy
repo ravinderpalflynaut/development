@@ -50,7 +50,7 @@ pipeline {
                 script {
                     docker.withRegistry("https://${DOCKER_REGISTRY_URL}", "${DOCKER_CREDENTIALS_ID}") {
                         docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push()
-                        docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push("${BUILD_ID}")
+                       // docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push("${BUILD_ID}")
                     }
                 }
             }
@@ -76,7 +76,7 @@ pipeline {
                         ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "
                         echo '${REG_PASS}' | docker login ${DOCKER_REGISTRY_URL} -u '${REG_USER}' --password-stdin &&
                         docker compose -f ${COMPOSE_PATH}/docker-compose.yml pull ${REPONAME} &&
-                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d ${REPONAME}
+                        docker compose -f ${COMPOSE_PATH}/docker-compose.yml up -d  --build ${REPONAME}
                         "
                     '''
                     }
@@ -84,7 +84,17 @@ pipeline {
             }
         }
 
-         
+        stage('Remove Unused & Dangling Images on Remote Server') {
+            steps {
+                sshagent(['Jenkins-Deployment']) {
+                    script {
+                         sh '''
+                          ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
+                         '''
+                    }
+                }
+            }
+        }           
         
     }
 }
