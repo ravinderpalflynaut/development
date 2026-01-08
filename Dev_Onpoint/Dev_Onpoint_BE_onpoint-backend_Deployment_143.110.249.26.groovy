@@ -50,7 +50,7 @@ pipeline {
                 script {
                     docker.withRegistry("https://${DOCKER_REGISTRY_URL}", "${DOCKER_CREDENTIALS_ID}") {
                         docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push()
-                        docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push("${BUILD_ID}")
+                       // docker.image("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}").push("${BUILD_ID}")
                     }
                 }
             }
