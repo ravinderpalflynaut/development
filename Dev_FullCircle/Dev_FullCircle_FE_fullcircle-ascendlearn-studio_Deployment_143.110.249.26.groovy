@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'fullcircle-ascendlearn-studio'
+        REPONAME              = 'fullcircle'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/fullcircle.git"
         GIT_BRANCH            = 'main'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/full-circle-web'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/fullcircle'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
