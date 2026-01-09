@@ -59,7 +59,7 @@ pipeline {
 
         stage('Cleanup Local Docker Images') {
             steps {
-                sh 'docker image prune -f'
+                sh 'docker system prune -a -f'
             }
         }
 
