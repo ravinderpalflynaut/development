@@ -4,9 +4,9 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'onpoint-backend'
+        REPONAME              = 'learnbetter-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/onpoint-backend.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/learnbetter-api.git"
         GIT_BRANCH            = 'development'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/learnbetter-dev/learnbetter-api'
