@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'onpoint-frontend'
+        REPONAME              = 'pss-app-user-web'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/onpoint-frontend.git"
-        GIT_BRANCH            = 'Development'
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/pss-app-user-web.git"
+        GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/onpoint-dev/onpoint-frontend'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/premierstaffingsolution-dev/pss-app-user-web'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
@@ -58,7 +58,7 @@ pipeline {
 
         stage('Cleanup Local Docker Images') {
             steps {
-                sh 'docker image prune -f'
+                sh 'docker system  prune -a -f'
             }
         }
 
