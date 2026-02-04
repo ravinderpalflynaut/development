@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'iliff-flourish-admin-new'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/iliff-flourish-admin-new.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'main'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-dev/iliff-flourish-admin-new'
         DOCKER_IMAGE_TAG      = 'latest'
