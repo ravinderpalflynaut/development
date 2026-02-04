@@ -9,7 +9,7 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/full-circle-web.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/full-circle-web'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/cco-retail-dev/full-circle-web'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
