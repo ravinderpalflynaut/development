@@ -59,7 +59,7 @@ pipeline {
         stage('Cleanup Local Docker Images') {
             steps {
                 sh "docker system  prune -a -f"
-                sh "docker rmi $(docker images -f "dangling=true" -q)"
+                // sh "docker rmi $(docker images -f "dangling=true" -q)"
             }
         }
 
@@ -91,7 +91,7 @@ pipeline {
                     script {
                          sh '''
                           ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
-                          ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker rmi $(docker images -f "dangling=true" -q)"
+                          // ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker rmi $(docker images -f "dangling=true" -q)"
                          '''
                     }
                 }
