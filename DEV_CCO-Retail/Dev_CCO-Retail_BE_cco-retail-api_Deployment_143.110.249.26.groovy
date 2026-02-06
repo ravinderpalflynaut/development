@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'cco-retail-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/cco-retail-api.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'main'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/cco-retail-dev/cco-retail-api'
         DOCKER_IMAGE_TAG      = 'latest'
