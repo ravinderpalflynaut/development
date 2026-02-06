@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'cco-retail-web'
+        REPONAME              = 'cco-ai-sales-app-web'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/cco-ai-sales-app-web.git"
         GIT_BRANCH            = 'development'
