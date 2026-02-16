@@ -3,13 +3,14 @@ pipeline {
         label 'dev-rvsingh'
     }
 
+
     environment {
-        REPONAME              = 'full-circle-web'
+        REPONAME              = 'bo-admin-new'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/full-circle-web.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/bo-admin-new.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/full-circle-web'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/bo-dev/bo-admin-new'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
@@ -98,4 +99,3 @@ pipeline {
         
     }
 }
-
