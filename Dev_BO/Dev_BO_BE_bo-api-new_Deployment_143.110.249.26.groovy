@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'full-circle-api'
+        REPONAME              = 'bo-api-new'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/full-circle-api.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/bo-api-new.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/full-circle-api'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/bo-dev/bo-api-new'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
