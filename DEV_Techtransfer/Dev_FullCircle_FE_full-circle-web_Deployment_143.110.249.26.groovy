@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'techtransfer-api'
+        REPONAME              = 'full-circle-web'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/techtransfer-api.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/full-circle-web.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/techtransfer-dev/techtransfer-api'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fullcircle-dev/full-circle-web'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
