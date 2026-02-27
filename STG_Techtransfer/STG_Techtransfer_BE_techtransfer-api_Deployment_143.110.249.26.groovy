@@ -17,7 +17,7 @@ pipeline {
         DEPLOY_SERVER         =  '10.122.0.9'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
-        COMPOSE_PATH          = '/var/www/dev-project'
+        COMPOSE_PATH          = '/var/www/stg-project'
         CONTAINER_NAME        = "${REPONAME}"
     }
 
