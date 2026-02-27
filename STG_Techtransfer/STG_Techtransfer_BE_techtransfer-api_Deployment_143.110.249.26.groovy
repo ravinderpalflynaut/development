@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'stg-techtransfer-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/techtransfer-api.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'Staging'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/techtransfer-stg/techtransfer-api'
         DOCKER_IMAGE_TAG      = 'latest'
