@@ -9,7 +9,7 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/iliff-flourish-api.git"
         GIT_BRANCH            = 'staging'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-dev/iliff-flourish-api'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-stg/iliff-flourish-api'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
