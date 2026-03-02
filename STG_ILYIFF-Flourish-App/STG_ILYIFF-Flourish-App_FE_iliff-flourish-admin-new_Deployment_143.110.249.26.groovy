@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'stg-iliff-flourish-admin-new'
+        REPONAME              = 'iliff-flourish-admin-new'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/iliff-flourish-admin-new.git"
         GIT_BRANCH            = 'Staging'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-dev/iliff-flourish-admin-new'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-stg/iliff-flourish-admin-new'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
