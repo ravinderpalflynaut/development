@@ -9,7 +9,7 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/iliff-flourish-web.git"
         GIT_BRANCH            = 'Staging'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-dev/iliff-flourish-web'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/ilyiff-flourish-app-stg/iliff-flourish-web'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
@@ -17,7 +17,7 @@ pipeline {
         DEPLOY_SERVER         =  '10.122.0.9'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
-        COMPOSE_PATH          = '/var/www/dev-project'
+        COMPOSE_PATH          = '/var/www/stg-project'
         CONTAINER_NAME        = "${REPONAME}"
     }
 
