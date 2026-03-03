@@ -4,7 +4,7 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'stg-iliff-flourish-api'
+        REPONAME              = 'iliff-flourish-api'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/iliff-flourish-api.git"
         GIT_BRANCH            = 'staging'
