@@ -9,7 +9,7 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/rushing-to-yourneeds-vendor-new.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/rushing2yourneed-dev/pss-app-backend'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/rushing2yourneed-dev/rushing-to-yourneeds-vendor-new'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
