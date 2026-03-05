@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'rushing-to-yourneeds-vendor-new'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/rushing-to-yourneeds-vendor-new.git"
-        GIT_BRANCH            = 'staging'
+        GIT_BRANCH            = 'development'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/rushing2yourneed-dev/pss-app-backend'
         DOCKER_IMAGE_TAG      = 'latest'
