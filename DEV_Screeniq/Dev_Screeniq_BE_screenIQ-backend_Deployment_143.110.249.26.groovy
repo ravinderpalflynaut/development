@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'screeniq-backend'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/screenIQ-backend.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'developer'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/screeniq-backend-dev/screeniq-backend'
         DOCKER_IMAGE_TAG      = 'latest'
