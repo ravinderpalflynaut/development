@@ -4,20 +4,20 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'rushing-to-yourneeds-vendor-new'
+        REPONAME              = 'OneProtectWeb'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/rushing-to-yourneeds-vendor-new.git"
-        GIT_BRANCH            = 'development'
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/OneProtectWeb.git"
+        GIT_BRANCH            = 'main'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/rushing2yourneed-dev/rushing-to-yourneeds-vendor-new'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/oneprotectweb-prod/oneprotectweb'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
-        DEPLOY_SERVER         =  '10.122.0.9'
+        DEPLOY_SERVER         =  '64.23.217.81'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
-        COMPOSE_PATH          = '/var/www/dev-project'
+        COMPOSE_PATH          = '/var/www/prod-project'
         CONTAINER_NAME        = "${REPONAME}"
     }
 
@@ -58,7 +58,7 @@ pipeline {
 
         stage('Cleanup Local Docker Images') {
             steps {
-                sh 'docker image prune -f'
+                sh 'docker system  prune -a -f'
             }
         }
 
