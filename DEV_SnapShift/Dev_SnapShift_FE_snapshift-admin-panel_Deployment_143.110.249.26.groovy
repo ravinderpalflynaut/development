@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'cco-restaurant-admin'
+        REPONAME              = 'snapshift-admin-panel'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/cco-restaurant-admin.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/snapshift-admin-panel.git"
         GIT_BRANCH            = 'development'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/cco-restaurant-dev/cco-restaurant-admin'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/snapshift-dev/snapshift-admin-panel'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
