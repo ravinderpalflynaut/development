@@ -4,12 +4,12 @@ pipeline {
     }
 
     environment {
-        REPONAME              = 'cco-retail-api'
+        REPONAME              = 'snapshift-landingpage'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
-        GIT_REPO              = "https://github.com/FlyNaut-Dev/cco-retail-api.git"
+        GIT_REPO              = "https://github.com/FlyNaut-Dev/snapshift-landingpage.git"
         GIT_BRANCH            = 'main'
 
-        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/cco-retail-dev/cco-retail-api'
+        DOCKER_HUB_REPO       = 'hub.flynautstaging.com/snapshift-dev/snapshift-landingpage'
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
