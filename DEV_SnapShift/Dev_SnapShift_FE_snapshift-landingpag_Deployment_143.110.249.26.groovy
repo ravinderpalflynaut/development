@@ -8,7 +8,7 @@ pipeline {
         REPONAME              = 'snapshift-landingpage'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/snapshift-landingpage.git"
-        GIT_BRANCH            = 'main'
+        GIT_BRANCH            = 'development'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/snapshift-dev/snapshift-landingpage'
         DOCKER_IMAGE_TAG      = 'latest'
