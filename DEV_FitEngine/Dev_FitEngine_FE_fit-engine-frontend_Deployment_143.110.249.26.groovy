@@ -7,10 +7,10 @@ pipeline {
         REPONAME              = 'fit-engine-frontend'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/fit-engine-frontend.git"
-        GIT_BRANCH            = 'main'
+        GIT_BRANCH            = 'development'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/fit-engine-dev/fit-engine-frontend'
-        DOCKER_IMAGE_TAG      = 'development'
+        DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
