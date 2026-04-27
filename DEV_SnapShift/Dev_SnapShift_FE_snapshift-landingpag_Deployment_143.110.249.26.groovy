@@ -3,6 +3,7 @@ pipeline {
         label 'dev-rvsingh'
     }
 
+
     environment {
         REPONAME              = 'snapshift-landingpage'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
@@ -14,7 +15,7 @@ pipeline {
         DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
-        DEPLOY_SERVER         =  '10.122.0.9'
+        DEPLOY_SERVER         =  '143.110.249.26'
         DEPLOY_USER           = 'root'
         DEPLOY_PORT           = '22'
         COMPOSE_PATH          = '/var/www/dev-project'
