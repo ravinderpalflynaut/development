@@ -7,7 +7,7 @@ pipeline {
         REPONAME              = 'snapshift-admin-panel'
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/snapshift-admin-panel.git"
-        GIT_BRANCH            = 'development'
+        GIT_BRANCH            = 'main'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/snapshift-dev/snapshift-admin-panel'
         DOCKER_IMAGE_TAG      = 'latest'
