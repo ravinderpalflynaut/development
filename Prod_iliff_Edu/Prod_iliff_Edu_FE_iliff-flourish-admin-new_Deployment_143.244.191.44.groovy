@@ -64,7 +64,7 @@ pipeline {
 
         stage('Docker Login + Deploy on Remote') {
             steps {
-                sshagent(['Prod_MMPS']) {
+                sshagent(['Prod_iliff_Edu']) {
                     withCredentials([
                         usernamePassword(
                             credentialsId: 'DockerHub',
@@ -86,7 +86,7 @@ pipeline {
 
         stage('Remove Unused & Dangling Images on Remote Server') {
             steps {
-                sshagent(['Prod_MMPS']) {
+                sshagent(['Prod_iliff_Edu']) {
                     script {
                          sh '''
                           ssh -o StrictHostKeyChecking=no -p ${DEPLOY_PORT} ${DEPLOY_USER}@${DEPLOY_SERVER} "docker system prune -a -f"
