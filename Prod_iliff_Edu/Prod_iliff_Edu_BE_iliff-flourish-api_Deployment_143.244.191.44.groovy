@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'iliff-prod'
+        label 'Prod_iliff_Edu'
     }
 
     environment {
