@@ -9,8 +9,10 @@ pipeline {
         GIT_REPO              = "https://github.com/FlyNaut-Dev/MMPS-Admin-Panel.git"
         GIT_BRANCH            = 'main'
 
-        DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'        
-        DOCKER_HUB_REPO       = "${DOCKER_REGISTRY_URL}/mmps-prod/mmps-admin-panel"
+        DOCKER_REGISTRY_URL   = 'hub.flynautstaging.com'
+        DOCKER_PROJECT        = 'mmps-prod'
+        DOCKER_HUB_REPO       = "${DOCKER_REGISTRY_URL}/${DOCKER_PROJECT}/${REPONAME}"
+        
         DOCKER_IMAGE_TAG      = 'latest'
         DOCKER_CREDENTIALS_ID = 'DockerHub'
 
