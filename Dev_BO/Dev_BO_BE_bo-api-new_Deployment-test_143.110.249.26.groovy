@@ -45,6 +45,7 @@ pipeline {
                     docker.build(
                         "${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}",
                         "--target ${env.BUILD_TARGET} ."
+                        )
                 }
             }
         }
