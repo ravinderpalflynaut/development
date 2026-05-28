@@ -8,6 +8,7 @@ pipeline {
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/bo-api-new.git"
         GIT_BRANCH            = 'dev-test'
+        BUILD_TARGET          = 'development'
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/bo-dev/bo-api-new-test'
         DOCKER_IMAGE_TAG      = 'latest'
@@ -40,7 +41,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}")
+                    //docker.build("${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}")
+                    docker.build(
+                        "${DOCKER_HUB_REPO}:${DOCKER_IMAGE_TAG}",
+                        "--target ${env.BUILD_TARGET} ."
                 }
             }
         }
