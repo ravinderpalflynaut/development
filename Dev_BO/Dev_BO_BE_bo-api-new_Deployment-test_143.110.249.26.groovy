@@ -8,8 +8,8 @@ pipeline {
         GIT_CREDENTIALS_ID    = 'Jenkins-Git-Cred'
         GIT_REPO              = "https://github.com/FlyNaut-Dev/bo-api-new.git"
         GIT_BRANCH            = 'dev-test'
-        //BUILD_TARGET          = 'development'
-        BUILD_TARGET          = 'production'        
+        BUILD_TARGET          = 'development'
+      //  BUILD_TARGET          = 'production'        
 
         DOCKER_HUB_REPO       = 'hub.flynautstaging.com/bo-dev/bo-api-new-test'
         DOCKER_IMAGE_TAG      = 'latest'
